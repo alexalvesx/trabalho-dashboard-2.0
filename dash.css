@@ -1,0 +1,206 @@
+/* Coloca Menu e Main lado a lado */
+.dashboard-container {
+    /*display: flex;*/
+   /* align-items: stretch;*/ /*Garante que as duas colunas tenham a mesma altura */
+   /* flex: 1;*/ /*Preenche todo o espaço vertical disponível (vh) */
+
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    background: transparent;
+    
+
+}
+
+/*O Contedúdo principal ocupa o resto da rela à direita */
+main {
+   /*flex: 1;*/
+   /* padding: 30px;*/
+   /*background-color: #f8f9fa ;*/ /*Cinza bem clarinho para destacar */
+   /* background: rgba(255, 255, 255, 0.7);*/
+
+    flex: 1;
+    padding: 30px;
+    /* 3. Efeito de Vidro: Branco com opacidade e desfoque */
+    background: rgba(184, 186, 202, 0.85); 
+    backdrop-filter: blur(0.5px); /* O "pulo do gato" para o efeito fosco */
+   -webkit-backdrop-filter: blur(0.5px); /* Suporte para Safari */
+    /* Opcional: borda sutil para separar do menu */
+    border-left:10px solid rgba(255, 255, 255, 0.3);
+}
+nav {
+    width: 200px;
+   /* background-color:rgb(70, 24, 104);*/
+    background: rgba(6, 20, 133, 0.85);
+    padding: 20px;
+    font-weight: bolder;
+    
+
+    display: flex;
+    flex-direction: column;
+
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 8px 12px;
+    list-style: none;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+    
+}
+nav a:hover {
+    background-color: #ffffff;
+    color: #000000;
+
+}
+.perfil-usuario { 
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    
+    padding-top: 20px;
+    border-top: 1px solid;
+    margin-top: auto;
+    
+
+
+    
+}
+
+.perfil-usuario img {
+    width: 40px;
+    border-radius: 50%;
+
+}
+
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+article {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+article h2 {
+    color: #004a8d;
+    margin-bottom: 10px;
+}
+article p {
+    margin-bottom: 20px;
+    color: #555;
+
+}
+
+body {
+    
+    background-image: url('fundo-main.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    /* 2. Removendo o background-color sólido que pode cobrir a imagem */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+
+}
+footer {
+    background-color: rgba(3, 7, 34, 0.85);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.btn {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    background-color: #004a8d;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #003366;
+
+}
+
+
+
+/*---------------------------------*/
+/*---------------------------------*/
+/*---------------------------------*/
+
+/*ADICIONAIS PARA TELA DE CELULAR E TABLETES */
+
+/*---------------------------------*/
+/*---------------------------------*/
+/*---------------------------------*/
+
+/*Media Query para Celulares e Tabletes */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /*Coloca o menu em cima do conteúdo */
+    }
+
+    nav {
+        width: 100%; /* Menu ocupa a largura toda */
+        box-sizing: border-box;
+        padding: 10px;
+    }
+    nav ul {
+        flex-direction: row; /*Itens do menu ficam lado a lado */
+        flex-wrap: wrap; /* Se não couber eles quebram a linha */
+        justify-content: center;
+        gap: 10px;
+    }
+    nav a {
+        padding: 10px 15px;
+        font-size: 14px;  
+    }
+    .perfil-usuario{
+        display: none; /* Esconde o perfil do mobile para poupar espaço */
+
+    }
+    main {
+        padding: 15px;
+    }
+    article {
+        min-width: 100; /* CAda card ocupa a largura total da tela */
+    }
+    footer {
+        font-size: 12px;
+    }
+}

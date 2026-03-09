@@ -1,13 +1,12 @@
 /* Coloca Menu e Main lado a lado */
 .dashboard-container {
-    /*display: flex;*/
-   /* align-items: stretch;*/ /*Garante que as duas colunas tenham a mesma altura */
-   /* flex: 1;*/ /*Preenche todo o espaço vertical disponível (vh) */
-
     display: flex;
-    align-items: stretch;
-    flex: 1;
+    align-items: stretch; /*Garante que as duas colunas tenham a mesma altura */
+    flex: 1; /*Preenche todo o espaço vertical disponível (vh) */
+
+    /*Minhas modificações */
     background: transparent;
+    /* ------------------ */
     
 
 }
@@ -16,28 +15,31 @@
 main {
     display: flex;
     justify-content: space-between; /* Espalhas os cards usando o espaço livre */
-/*  flex-wrap: wrap; ; */ /* Se a tela encolher, joga o card pra linha de baixo */
-/*  gap: 20px; */ /* Espaço entre colunas */
-/*  padding: 20px; */
-    flex: 1; /*Faz o main crescer para ocupar espaço disponível entre o header e o footer */
+    flex-wrap: wrap; /* Se a tela encolher, joga o card pra linha de baixo */
+    gap: 20px;  /* Espaço entre colunas */
     padding: 20px;
+    flex: 1; /*Faz o main crescer para ocupar espaço disponível entre o header e o footer */
+    /*Adicione essa linha se precisar corrigir o alinhamento das linhas de cards */
+    align-content: flex-start;/* Agrupa as linhas de cards no topo do main */
 
-    /* 3. Efeito de Vidro: Branco com opacidade e desfoque */
+    /* Minhas modificações */
+    /*Efeito de Vidro: Branco com opacidade e desfoque */
     background: rgba(184, 186, 202, 0.85); 
     backdrop-filter: blur(0.5px); /* O "pulo do gato" para o efeito fosco */
    -webkit-backdrop-filter: blur(0.5px); /* Suporte para Safari */
     /* Opcional: borda sutil para separar do menu */
     border-left:10px solid rgba(255, 255, 255, 0.3);
+    /* -------------------- */
 }
 nav {
     width: 200px;
-   /* background-color:rgb(70, 24, 104);*/
+   /* background-color:rgb(70, 24, 104); */
     background: rgba(6, 20, 133, 0.85);
     padding: 20px;
     font-weight: bolder;
     
 
-    display: flex;
+    display: flex; /*Coloca os itens do menu em uma coluna */
     flex-direction: column;
 
 }
